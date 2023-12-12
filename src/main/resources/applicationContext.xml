@@ -18,8 +18,9 @@
           class="org.example.RockMusic">
     </bean>
     <bean id="musicPlayer"
-          class="org.example.MusicPlayer">
-<!--        <constructor-arg ref="musicBean"/>-->
+          class="org.example.MusicPlayer"
+          scope="prototype">
+        <!--        <constructor-arg ref="musicBean"/>-->
         <property name="musicList">
             <list>
                 <ref bean="musicBean1"/>
