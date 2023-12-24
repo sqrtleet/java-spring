@@ -1,5 +1,5 @@
 package org.example;
 
 public enum MusicGenre {
-    Classical, Rock
+    Classical, Rock, Rap
 }

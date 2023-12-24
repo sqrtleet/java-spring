@@ -1,22 +1,22 @@
 package org.example;
 
-import org.springframework.stereotype.Component;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
-import java.util.ArrayList;
-import java.util.List;
 
-@Component
-public class RockMusic implements Music{
-    List<String> musicList = new ArrayList<>();
+public class RockMusic implements Music {
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("Doing my initialization");
+    }
 
-    {
-        for (int i = 1; i <= 5; i++) {
-            this.musicList.add("Rock music №" + i);
-        }
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Doing my destruction");
     }
 
     @Override
-    public List<String> getSong() {
-        return musicList;
+    public String getSong() {
+        return "Wind cries Mary";
     }
 }
